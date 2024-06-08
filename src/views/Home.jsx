@@ -2,6 +2,12 @@ import shoes_home from "../assets/img/shoes_home.png";
 import bg_shoesHome from "../assets/img/bg_shoesHome.svg";
 import burbuja from '../assets/img/burbuja.png'
 import NavBar from "../components/NavBar";
+import shoes from "../assets/img/shoes.png";
+import shorts from "../assets/img/shorts.png";
+import shirt from "../assets/img/shirt.png";
+import accesories from "../assets/img/accesories.png";
+
+
 const Home = () => {
 
     const styles = {
@@ -26,6 +32,7 @@ const Home = () => {
                     <img className=" top-[73px] left-[754.69px] rotate-[33.21deg] absolute w-[608.77px] h-[584.5px] " src={burbuja} alt="" />
                     <img className=" top-[-490px] left-[1125px] rotate-[33.21deg] absolute w-[608.77px] h-[584.5px] " src={burbuja} alt="" />
                     <img className=" top-[-392px] left-[-344px] rotate-[33.21deg] absolute w-[608.77px] h-[584.5px] z-10 " src={burbuja} alt="" />
+                    <img className="w-[608.77px] h-[584.5px] absolute top-[650px] left-[-290px] z-[10]" src={burbuja} alt="" />
                 </div>
             </div>
             <section className="flex ">
@@ -53,8 +60,22 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section>
 
+            <div>
+                <div>
+                    
+                </div>
+                <h1 style={styles.h1} className="ml-4 text-[75px] extrabold text-white z-20 relative ">CATEGORIAS</h1>
+                <div>
+                    <img scr="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                </div>
+            </div>
+
+            <section>
+                
             </section>
         </main>
     );
