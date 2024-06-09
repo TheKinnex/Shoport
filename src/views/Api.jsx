@@ -1,8 +1,7 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import axios from "axios";
+import { useState, useEffect } from "react";
 
-const a = () => {
-    
+const Api = () => {
     const [data, setData] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('');
@@ -78,4 +77,4 @@ const a = () => {
     );
 }
 
-export default a;
+export default Api;

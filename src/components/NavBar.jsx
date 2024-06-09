@@ -1,8 +1,8 @@
-import logo from '../assets/img/logo-nav.png'
+import logo from '../assets/img/logo.png'
 
 const NavBar = () => {
     return (
-        <div className=' fixed w-full top-0 z-20'>
+        <div className=' fixed w-full top-0 z-30'>
             <div className=' px-8 py-4 flex items-center justify-between text-white'>
                 <div>
                     <a href="">
