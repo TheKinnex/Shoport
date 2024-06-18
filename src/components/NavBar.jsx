@@ -1,19 +1,40 @@
+import { useLocation } from 'react-router-dom';
 import logo from '../assets/img/logo.png'
 
 const NavBar = () => {
+
+    const styles = {
+        container: 'fixed w-full top-0 z-30',
+        container__inner:  'px-8 py-4 flex items-center justify-between text-white',
+        container__links: 'flex gap-12'
+    }
+        
+        
+    
+
+    const location = useLocation();
+    const {pathname} = location;
+
+    if (pathname.includes('Product')) 
+        { console.log("si")
+            styles.container__inner = 'px-8 py-4 flex items-center justify-between text-black '
+        } else {console.log("no")
+
+        }
+
     return (
-        <div className=' fixed w-full top-0 z-30'>
-            <div className=' px-8 py-4 flex items-center justify-between text-white'>
+        <div className={styles.container}>
+            <div className={styles.container__inner}>
                 <div>
                     <a href="">
                         <img src={logo} className=' w-48' alt="" />
                     </a>
                 </div>
-                <div className=' flex gap-12'>
+                <div className={styles.container__links}>
                     <a href="">Inicio</a>
                     <a href="">Productos</a>
                 </div>
-                <div className='flex gap-12 '>
+                <div className={styles.container__links}>
                     <a href="">Iniciar Sesion</a>
                     <a href="">Registrarse</a>
                 </div>

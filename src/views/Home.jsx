@@ -25,19 +25,18 @@ const Home = () => {
 
 
         <main className=" bg-[#FF6D00] font-inter overflow-y-hidden   ">
-            <nav className=" mb-20">
-                <NavBar />
-            </nav>
-            <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden h-[1657px] ">
-                <div className=" ">
-                    <img className=" top-[73px] left-[754.69px] rotate-[33.21deg] absolute w-[608.77px] h-[584.5px] " src={burbuja} alt="" />
-                    <img className=" top-[-490px] left-[1125px] rotate-[33.21deg] absolute w-[608.77px] h-[584.5px] " src={burbuja} alt="" />
-                    <img className=" top-[-392px] left-[-344px] rotate-[185.21deg] absolute w-[608.77px] h-[584.5px] z-10 " src={burbuja} alt="" />
-                    <img className=" w-[608.77px] h-[584.5px] rotate-[33.21deg] absolute top-[736px] left-[-210px] z-10" src={burbuja} alt="" />
-                    <img className=" w-[608.77px] h-[584.5px] rotate-[30deg] absolute top-[736px] left-[1080px] z-10" src={burbuja} alt="" />
-                    <img className=" w-[608.77px] h-[584.5px] rotate-[33.21deg] absolute top-[1301px] left-[-192px] z-10" src={burbuja} alt="" />
-                    <img className=" w-[608.77px] h-[584.5px] rotate-[33.21deg] absolute top-[1324px] left-[706px] z-10" src={burbuja} alt="" />
-                    <img className=" w-[608.77px] h-[584.5px] rotate-[463.21deg] absolute top-[1525px] left-[976px] z-30" src={burbuja} alt="" />
+            <div className="mt-20">
+                <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden h-[1633px]  ">
+                    <div>
+                        <img className=" top-[73px] left-[754.69px] rotate-[33.21deg] absolute w-[608.77px] h-[584.5px] " src={burbuja} alt="" />
+                        <img className=" top-[-490px] left-[1125px] rotate-[33.21deg] absolute w-[608.77px] h-[584.5px] " src={burbuja} alt="" />
+                        <img className=" top-[-392px] left-[-344px] rotate-[185.21deg] absolute w-[608.77px] h-[584.5px] z-10 " src={burbuja} alt="" />
+                        <img className=" w-[608.77px] h-[584.5px] rotate-[33.21deg] absolute top-[736px] left-[-210px] z-10" src={burbuja} alt="" />
+                        <img className=" w-[608.77px] h-[584.5px] rotate-[30deg] absolute top-[736px] left-[1080px] z-10" src={burbuja} alt="" />
+                        <img className=" w-[608.77px] h-[584.5px] rotate-[33.21deg] absolute top-[1301px] left-[-192px] z-10" src={burbuja} alt="" />
+                        <img className=" w-[608.77px] h-[584.5px] rotate-[33.21deg] absolute top-[1324px] left-[706px] z-10" src={burbuja} alt="" />
+                        <img className=" w-[608.77px] h-[584.5px] rotate-[463.21deg] absolute top-[1525px] left-[976px] z-30" src={burbuja} alt="" />
+                    </div>
                 </div>
             </div>
             <section className="flex ">
@@ -76,10 +75,6 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <footer className=" overflow-x-hidden">
-
-                <Footer/>
-            </footer>
         </main>
     );
 }

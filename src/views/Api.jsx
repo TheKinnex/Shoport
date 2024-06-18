@@ -1,31 +1,43 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const Api = () => {
-    const [data, setData] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(2);
 
+    
+    const [data, setData] = useState([]); //Esto lo utilizaremos para guardar mis productos
+    const [categories, setCategories] = useState([]); //Esto para guardar las categorias
+    const [selectedCategory, setSelectedCategory] = useState(''); //Para controlar el cambio de categoria
+    const [currentPage, setCurrentPage] = useState(1); //Para controlar la paginación
+    const [itemsPerPage] = useState(2); //Limitando los productos por pagina
+    const navigate = useNavigate();
+
+    //Obtenemos la api
     useEffect(() => {
         axios.get('https://quixotic-elf-391004-default-rtdb.firebaseio.com/products.json')
             .then(res => {
-                // Transformar los datos de objeto a lista de objetos
-                const productsArray = Object.values(res.data);
-                setData(productsArray);
+                
+                // Guardamos los productos en state Data
+                const productsList = Object.values(res.data);
+                setData(productsList);
 
-                // Obtener categorías únicas
-                const uniqueCategories = Array.from(new Set(productsArray.map(product => product.product_category[0].name)));
-                setCategories(uniqueCategories);
+                
+
+                // Obtener categorías de los productos y las iteramos de manera que no se repitan
+                const uniqueCategories = Array.from(new Set(productsList.map(product => product.product_category.name)));
+                setCategories(uniqueCategories); //Guardamos en mi state categories
             })
             .catch(error => console.error(error));
     }, []);
 
+
+    
     const handleCategoryChange = (category) => {
         setSelectedCategory(category);
         setCurrentPage(1); // Resetear a la primera página cuando cambia la categoría
     };
+
 
     const handlePageChange = (direction) => {
         let newPage = currentPage;
@@ -37,11 +49,44 @@ const Api = () => {
         setCurrentPage(newPage);
     };
 
+    
     // Filtrar productos por categoría seleccionada
-    const filteredData = selectedCategory ? data.filter(product => product.product_category[0].name === selectedCategory) : data;
+    const filteredData = 
+    //Verificamos si tiene algun valor
+    selectedCategory ? 
+    //Filtramos los productos por aquellos que tengan el mismo valor de categoria
+    data.filter(product => product.product_category.name === selectedCategory) 
+    //Si no mostramos todos los datos
+    : data;
 
+
+
+    /*Sacamos el indice inicial de la siguiente manera
+
+    pagina = 1
+    - 1 (este valor es para poder obtener el indice 0)
+    * los items maximos por pagina 
+
+    (1 - 1) * 2 = 0 || Este seria de donde empezaria el slice
+
+    */
     const startIndex = (currentPage - 1) * itemsPerPage;
+
+
+    /*
+    Sacamos el indice final de la siguiente manera
+
+    inidice inicial en este caso 0 + 2 que son los items maximos
+    es decir que el indice final sera 2, pero solo se mostraran
+    los objetos (0 y 1)
+
+    */
     const endIndex = startIndex + itemsPerPage;
+
+    /*
+    Hacemos el slice (donde comienza, hasta donde termina) para que nos devuelva
+    una nueva array
+     */
     const paginatedData = filteredData.slice(startIndex, endIndex);
 
     return (
@@ -65,6 +110,18 @@ const Api = () => {
                     <p>{product.product_description}</p>
                     <p>{product.product_price}</p>
                     <p>Rating: {product.product_star_rating}</p>
+                    {
+                        product.reviews.map((r, index) => (
+
+                            <div key={index}>
+                                <p>{r.user_name}</p>
+                                <p>{r.review_description}</p>
+                                <p>{r.review_star_rating}</p>
+                                <img className=" w-36" src={product.product_photo} alt="" />
+                                
+                            </div>
+                        ))}
+                    <button onClick={() => { navigate(`/Product/${product.assin}`)}}> Ver Más </button>
                 </div>
             ))}
             {/* Controles de paginación */}
