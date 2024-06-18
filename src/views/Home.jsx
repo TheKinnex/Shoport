@@ -1,12 +1,11 @@
 import shoes_home from "../assets/img/shoes_home.png";
 import bg_shoesHome from "../assets/img/bg_shoesHome.svg";
 import burbuja from '../assets/img/burbuja.png'
-import NavBar from "../components/NavBar";
 import shoes from "../assets/img/shoes.png"
 import shorts from "../assets/img/shorts.png";
 import shirt from "../assets/img/shirt.png";
 import accesories from "../assets/img/accesories.png";
-import Footer from "../components/Footer";
+
 
 
 const Home = () => {
