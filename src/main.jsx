@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <NavBar/>
     <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='Shoport/' element={<Home/>}/>
         <Route path='/Api' element={<Api/>}/>
         <Route path='/Product/:assinProduct' element={<IndividualProduct/>}/>
         <Route path='*' element={<NoFound/>}/>
