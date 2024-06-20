@@ -13,12 +13,10 @@ const Footer = () => {
     const location = useLocation();
     const {pathname} = location;
 
-    if (pathname.includes('Product')) 
-        { console.log("si")
-            styles.container = 'w-full bg-[#DF7D34] px-8 py-7 relative z-20 text-white font-normal '
-        } else {console.log("no")
-
-        }
+    if (pathname.includes('Producto') || pathname.includes('Catalogo')) 
+        { 
+            styles.container = 'w-full bg-[#DF7D34] px-8 py-7 relative z-20 text-white font-normal ';
+        } 
 
     return (
         <div className={styles.container}>

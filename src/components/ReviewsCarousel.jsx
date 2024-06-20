@@ -49,7 +49,7 @@ const ReviewsCarousel = ({ data }) => {
                                     <StarRating product={false} rating={review.review_star_rating} />
                                 </div>
                                 <div className="w-[100px] h-[100px] flex items-center justify-center overflow-hidden m-[5px]">
-                                    <img className='max-w-full max-h-full object-cover' src={data.product_photo} alt="" />
+                                    <img style={{mixBlendMode:"darken"}} className='max-w-full max-h-full object-cover' src={data.product_photo} alt="" />
                                 </div>
                             </div>
                         </div>

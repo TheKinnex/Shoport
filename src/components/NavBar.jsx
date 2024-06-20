@@ -15,12 +15,10 @@ const NavBar = () => {
     const location = useLocation();
     const {pathname} = location;
 
-    if (pathname.includes('Product')) 
-        { console.log("si")
+    if (pathname.includes('Producto') || pathname.includes('Catalogo')) 
+        {
             styles.container__inner = 'px-8 py-4 flex items-center justify-between text-black '
-        } else {console.log("no")
-
-        }
+        }   
 
     return (
         <div className={styles.container}>

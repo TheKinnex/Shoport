@@ -62,7 +62,7 @@ const individualProduct = () => {
                         <section className=" mt-20" >
                             <div className=" flex flex-col gap-5">
                                 <div className=" pt-5">
-                                    <p>Categoria - <span>{data.product_category.name}</span></p>
+                                    <p>{`Producto > ${data.product_category.name}`}</p>
                                 </div>
                                 <div className=" flex justify-center gap-16">
                                     <StarRating product={true} rating={data.product_star_rating} />
@@ -71,12 +71,12 @@ const individualProduct = () => {
                                     </div>
                                     <div className="  flex flex-col flex-wrap">
                                         <div className=" w-[70px] h-[70px] flex items-center justify-center overflow-hidden m-[5px] bg-gray-200 border-gray-200 border-2" >
-                                            <img className=" max-w-full max-h-full object-cover" src={data.product_photo} alt="" onClick={() => handleMainImage(data.product_photo)} />
+                                            <img style={{mixBlendMode:"darken"}} className=" max-w-full max-h-full object-cover" src={data.product_photo} alt="" onClick={() => handleMainImage(data.product_photo)} />
                                         </div>
                                         {
                                             data.product_photos.map((photo, index) => (
                                                 <div className=" w-[70px] h-[70px] flex items-center justify-center overflow-hidden m-[5px] bg-gray-200 border-gray-200 border" >
-                                                    <img className=" max-w-full max-h-full object-cover"
+                                                    <img style={{mixBlendMode:"darken"}} className=" max-w-full max-h-full object-cover"
                                                         key={index}
                                                         src={photo}
                                                         alt=""

@@ -9,16 +9,21 @@ import Footer from './components/Footer'
 import NoFound from './views/NoFound'
 import Login from './views/Login'
 import Register from './views/Register'
+import Catalogue from './views/Catalogue'
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <NavBar/>
     <Routes>
-        <Route path='Shoport/' element={<Home/>}/>
+        <Route path='/' element={<Home/>}/>
         <Route path='/Api' element={<Api/>}/>
-        <Route path='/Product/:assinProduct' element={<IndividualProduct/>}/>
+        <Route path='/Producto/:assinProduct' element={<IndividualProduct/>}/>
         <Route path='*' element={<NoFound/>}/>
         <Route path='/Login' element={<Login/>}/>
         <Route path='/Register' element={<Register/>}/>
+        <Route path='/Catalogo/' element={<Catalogue/>}/>
+        <Route path='/Catalogo/:category' element={<Catalogue/>}/>
     </Routes>
     <Footer/>
   </BrowserRouter>
