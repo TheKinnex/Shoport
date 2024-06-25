@@ -1,25 +1,22 @@
-import { useLocation } from 'react-router-dom';
-import logo from '../assets/img/logo.png'
-import FavoritesDropwdown from './FavoritesDropdown';
-import { NavLink } from 'react-router-dom';
+import { useLocation, NavLink, useNavigate } from 'react-router-dom';
+import logo from '../assets/img/logo.png';
+import FavoritesDropdown from './FavoritesDropdown'; // Importa el componente DisplayFavorites
 
 const NavBar = () => {
-
     const styles = {
-        container: 'fixed w-screen top-0 z-30',
-        container__inner: 'px-8 py-4 flex items-center justify-between',
-        container__links: 'flex gap-12',
-        container__links_rl: '',
-        container__home: 'text-white'
-    }
-
-
+        container: 'fixed w-full top-0 z-30',
+        container__inner: 'px-4 md:px-8 py-4 flex items-center justify-between',
+        container__links: 'flex gap-4 md:gap-8 items-center',
+        logo: 'w-24 md:w-48',
+        link: 'text-white md:text-black',
+    };
 
     const location = useLocation();
+    const navigate = useNavigate();
     const { pathname } = location;
 
-    const isAuthPage = pathname.toLowerCase().includes('login') || pathname.toLowerCase().includes('register');
-    const isProductPage = pathname.toLowerCase().includes('products') || pathname.toLowerCase().includes('product') || pathname.toLowerCase().includes('shoppingcart');
+    const isAuthPage = pathname.includes('login') || pathname.includes('register');
+    const isProductPage = pathname.includes('producto') || pathname.includes('catalogo');
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
     const handleLogout = () => {
@@ -35,24 +32,24 @@ const NavBar = () => {
                         <img src={logo} className={styles.logo} alt="Logo" />
                     </NavLink>
                 </div>
-                <div className={`${styles.container__links} ${isAuthPage ? 'hidden' : ''}`}>
+                <div className="hidden md:flex gap-4 items-center">
                     <NavLink to="/" className={({ isActive }) => isActive ? 'font-bold' : ''}>
                         Inicio
                     </NavLink>
-                    <NavLink to="/Products" className={({ isActive }) => isActive ? 'font-bold' : ''}>
+                    <NavLink to="/products" className={({ isActive }) => isActive ? 'font-bold' : ''}>
                         Productos
                     </NavLink>
                 </div>
                 {!isAuthPage && (
-                    <div className={styles.container__links}>
+                    <div className="flex gap-4 items-center">
                         {currentUser ? (
                             <>
-                                <FavoritesDropwdown/>
+                                <FavoritesDropdown />
                                 <NavLink to="/ShoppingCart" className={({ isActive }) => isActive ? 'font-bold' : ''}>
                                     Carrito
                                 </NavLink>
-                                <button
-                                    onClick={handleLogout}
+                                <button 
+                                    onClick={handleLogout} 
                                     className="font-bold text-white md:text-black"
                                 >
                                     Cerrar Sesión
@@ -60,10 +57,10 @@ const NavBar = () => {
                             </>
                         ) : (
                             <>
-                                <NavLink to="/Login" className={({ isActive }) => isActive ? 'font-bold' : ''}>
+                                <NavLink to="/login" className={({ isActive }) => isActive ? 'font-bold' : ''}>
                                     Iniciar Sesión
                                 </NavLink>
-                                <NavLink to="/Register" className={({ isActive }) => isActive ? 'font-bold' : ''}>
+                                <NavLink to="/register" className={({ isActive }) => isActive ? 'font-bold' : ''}>
                                     Registrarse
                                 </NavLink>
                             </>
@@ -72,6 +69,7 @@ const NavBar = () => {
                 )}
             </div>
         </div>
-    );}
+    );
+};
 
 export default NavBar;

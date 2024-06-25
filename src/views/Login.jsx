@@ -8,7 +8,7 @@ const estilos = {
 
 const Login = () => {
 
-    const navigate = Navigate();
+  
 
     const [user, setUser] = useState({
         emailOrPhone: '',
