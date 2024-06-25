@@ -39,7 +39,7 @@ const NavBar = () => {
                     <NavLink to="/" className={({ isActive }) => isActive ? 'font-bold' : ''}>
                         Inicio
                     </NavLink>
-                    <NavLink to="/productos" className={({ isActive }) => isActive ? 'font-bold' : ''}>
+                    <NavLink to="/Products" className={({ isActive }) => isActive ? 'font-bold' : ''}>
                         Productos
                     </NavLink>
                 </div>
@@ -48,7 +48,7 @@ const NavBar = () => {
                         {currentUser ? (
                             <>
                                 <FavoritesDropwdown/>
-                                <NavLink to="/carrito" className={({ isActive }) => isActive ? 'font-bold' : ''}>
+                                <NavLink to="/ShoppingCart" className={({ isActive }) => isActive ? 'font-bold' : ''}>
                                     Carrito
                                 </NavLink>
                                 <button
@@ -60,10 +60,10 @@ const NavBar = () => {
                             </>
                         ) : (
                             <>
-                                <NavLink to="/login" className={({ isActive }) => isActive ? 'font-bold' : ''}>
+                                <NavLink to="/Login" className={({ isActive }) => isActive ? 'font-bold' : ''}>
                                     Iniciar Sesión
                                 </NavLink>
-                                <NavLink to="/register" className={({ isActive }) => isActive ? 'font-bold' : ''}>
+                                <NavLink to="/Register" className={({ isActive }) => isActive ? 'font-bold' : ''}>
                                     Registrarse
                                 </NavLink>
                             </>

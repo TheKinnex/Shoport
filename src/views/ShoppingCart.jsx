@@ -68,7 +68,7 @@ const ShoppingCart = () => {
     const total = (parseFloat(subtotal) + shipping).toFixed(2);
 
     return (
-        <section>
+        <section className=' bg-gray-100'>
             <div className="min-h-[73vh] pt-20  flex flex-col items-center p-4">
                 <div className="w-full md:w-[80%] max-w-6xl flex flex-col md:flex-row gap-4">
                     <div className="flex-1 overflow-y-scroll h-[30rem]">

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import heart from '../assets/img/heart.png';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 

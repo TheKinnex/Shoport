@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {BrowserRouter, Routes, Route} from 'react-router-dom' 
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './views/Home'
-import Api from './views/Api'
 import NavBar from './components/NavBar'
 import IndividualProduct from './views/IndividualProduct'
 import Footer from './components/Footer'
@@ -13,19 +12,18 @@ import Catalogue from './views/Catalogue'
 import ShoppingCart from './views/ShoppingCart'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <NavBar/>
-    <Routes>
-        <Route path='/Home' element={<Home/>}/>
-        <Route path='/Api' element={<Api/>}/>
-        <Route path='/Product/:assinProduct' element={<IndividualProduct/>}/>
-        <Route path='*' element={<NoFound/>}/>
-        <Route path='/Login' element={<Login/>}/>
-        <Route path='/Register' element={<Register/>}/>
-        <Route path='/Products/' element={<Catalogue/>}/>
-        <Route path='/Products/:category' element={<Catalogue/>}/>
-        <Route path='/ShoppingCart' element={<ShoppingCart/>}/>
-    </Routes>
-    <Footer/>
-  </BrowserRouter>
+        <BrowserRouter>
+                <NavBar />
+                <Routes>
+                        <Route path='/' element={<Home />} />
+                        <Route path='/Product/:assinProduct' element={<IndividualProduct />} />
+                        <Route path='*' element={<NoFound />} />
+                        <Route path='/Login' element={<Login />} />
+                        <Route path='/Register' element={<Register />} />
+                        <Route path='/Products/' element={<Catalogue />} />
+                        <Route path='/Products/:category' element={<Catalogue />} />
+                        <Route path='/ShoppingCart' element={<ShoppingCart />} />
+                </Routes>
+                <Footer />
+        </BrowserRouter>
 )

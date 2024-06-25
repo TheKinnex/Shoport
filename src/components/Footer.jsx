@@ -1,5 +1,6 @@
 import logo from '../assets/img/logo.png'
 import { useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
 
@@ -13,11 +14,11 @@ const Footer = () => {
     }
 
     const location = useLocation();
-    const {pathname} = location;
+    const { pathname } = location;
 
-    if (pathname.includes('Product') || pathname.includes('Products') || pathname.includes('ShoppingCart')) { 
+    if (pathname.toLocaleLowerCase().includes('product') || pathname.toLocaleLowerCase().includes('products') || pathname.toLocaleLowerCase().includes('shoppingcart')) {
         styles.container = 'w-full h-full md:h-[33vh] bg-[#DF7D34] px-8 py-7 relative z-20 text-white font-normal';
-    } 
+    }
 
     return (
         <div className={styles.container}>
@@ -35,19 +36,19 @@ const Footer = () => {
                 </div>
                 <div className={styles.info_container}>
                     <h3 className='font-medium'>Categorías</h3>
-                    <a href="">Zapatos</a>
-                    <a href="">Camisas</a>
-                    <a href="">Accesorios</a>
-                    <a href="">Short</a>
+                    <NavLink to={"/Products/Zapatos"}>{"Zapatos"}</NavLink>
+                    <NavLink to={"/Products/Camisas"}>{"Camisas"}</NavLink>
+                    <NavLink to={"/Products/Short"}>{"Short"}</NavLink>
+                    <NavLink to={"/Products/Accesorios"}>{"Accesorios"}</NavLink>
                 </div>
                 <div className={styles.info_container}>
                     <h3 className='font-medium'>Métodos de Pago</h3>
                     <p className={styles.payment_method}>
-                        Paypal 
+                        Paypal
                         <span><img src="/path/to/paypal-logo.png" alt="Paypal" className="w-6 h-6" /></span>
                     </p>
                     <p className={styles.payment_method}>
-                        Binance 
+                        Binance
                         <span><img src="/path/to/binance-logo.png" alt="Binance" className="w-6 h-6" /></span>
                     </p>
                 </div>
