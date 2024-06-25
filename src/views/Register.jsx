@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { json } from "react-router-dom";
+import boton from '../assets/img/burjaboton.png';
+
+const estilos = {
+    letters: ' text-[24px] text-black'
+
+}
 
 const Register = () => {
 
@@ -75,19 +81,43 @@ const Register = () => {
     }
 
     return (
-        <div className="mt-72">
-            <h2>Registro</h2>
+        <section className="flex flex-col items-center justify-center mt-20 mb-8 drop-shadow-lg ">
+            <div className="border-2 rounded-xl w-[35rem] h-[48rem] pt-10 ">
             {err && <p style={{ color: 'red' }}>{err}</p>}
             <form onSubmit={handleSubmit}>
-                <input type="text" name="name" value={user.name} onChange={handleChange} placeholder="Nombre" required />
-                <input type="text" name="lastName" value={user.lastName} onChange={handleChange} placeholder="Apellido" required />
-                <input type="text" name="phone" value={user.phone} onChange={handleChange} placeholder="Número de teléfono" required />
-                <input type="email" name="email" value={user.email} onChange={handleChange} placeholder="Correo" required />
-                <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="Contraseña" required />
-                <input type="date" name="birthDate" value={user.birthDate} onChange={handleChange} required />
-                <button type="submit">Registrar</button>
-            </form>
+                <div className="ml-6">
+                <p className={estilos.letters} >Correo Electronico</p>
+                <input className="w-[32rem] h-[30px] mt-4 rounded-lg bg-slate-200" type="email" name="email" value={user.email} onChange={handleChange} placeholder="" required />
+                </div>
+
+                <div className="ml-6 mt-8">
+                <p className={estilos.letters}> Nombre y Apellido</p>
+                <input className="w-[14rem] h-[30px] mt-4 mr-16 rounded-lg bg-slate-200" type="text" name="name" value={user.name} onChange={handleChange} placeholder="" required />
+                <input className="w-[14rem] h-[30px] mt-4 rounded-lg bg-slate-200" type="text" name="lastName" value={user.lastName} onChange={handleChange} placeholder="" required />
+                </div>
+
+                <div className="ml-6 mt-8">
+                <p className={estilos.letters} >Telefono y Fecha de Nacimiento</p>
+                <input className="w-[14rem] h-[30px] mt-4 mr-16 rounded-lg bg-slate-200" type="text" name="phone" value={user.phone} onChange={handleChange} placeholder="" required />
+                <input className="w-[14rem] h-[30px] mt-4 rounded-lg bg-slate-200" type="date" name="birthDate" value={user.birthDate} onChange={handleChange} required />
+                </div>
+
+                <div className="ml-6 mt-8">
+                <p className={estilos.letters} >Contraseña</p>
+                <input className="w-[14rem] h-[30px] mt-4 rounded-lg bg-slate-200" type="password" name="password" value={user.password} onChange={handleChange} placeholder="" required />
+                </div>
+
+                <div className="mt-10 ml-6">
+                <a className="text-sky-500" href="">¿Ya tienes una cuenta? Inicia Sesión</a>
+                </div>
+
+                <div className="mt-12 relative drop-shadow-lg ">
+                    <img src={boton} alt="" className="w-[180px] ml-48 " />
+                <button type="submit" className="absolute bottom-3 left-1/2 -translate-x-1/2 p-8 text-white font-semibold text-[18px] hover:text-black">Registrarse</button>
+                </div>
+                </form>
         </div>
+        </section>
     )
 }
 

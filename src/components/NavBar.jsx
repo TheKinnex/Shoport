@@ -3,42 +3,43 @@ import logo from '../assets/img/logo.png'
 
 const NavBar = () => {
 
-    const styles = {
-        container: 'fixed w-full top-0 z-30',
-        container__inner:  'px-8 py-4 flex items-center justify-between text-white',
-        container__links: 'flex gap-12'
-    }
-        
-        
-    
+    const styles = {
+        container: 'fixed w-screen top-0 z-30',
+        container__inner: 'px-8 py-4 flex items-center justify-between text-white',
+        container__links: 'flex gap-12',
+        container__links_rl: 'block'
+    }
 
-    const location = useLocation();
-    const {pathname} = location;
+    const location = useLocation();
+    const { pathname } = location;
 
-    if (pathname.includes('Producto') || pathname.includes('Catalogo')) 
-        {
-            styles.container__inner = 'px-8 py-4 flex items-center justify-between text-black '
-        }   
+    if (pathname.includes('Producto') || pathname.includes('Catalogo')) {
+        styles.container__inner = 'px-8 py-4 flex items-center justify-between text-black '
+    }
+if (pathname.includes('Login') || pathname.includes('Register')) {
+        styles.container__links_rl= 'hidden'
+       
+    }
 
-    return (
-        <div className={styles.container}>
-            <div className={styles.container__inner}>
-                <div>
-                    <a href="">
-                        <img src={logo} className=' w-48' alt="" />
-                    </a>
-                </div>
-                <div className={styles.container__links}>
-                    <a href="">Inicio</a>
-                    <a href="">Productos</a>
-                </div>
-                <div className={styles.container__links}>
-                    <a href="">Iniciar Sesion</a>
-                    <a href="">Registrarse</a>
-                </div>
-            </div>
-        </div>
-    );
+    return (
+        <div className={styles.container}>
+            <div className={styles.container__inner}>
+                <div>
+                    <a href="">
+                        <img src={logo} className=' w-48' alt="" />
+                    </a>
+                </div>
+                <div className={styles.container__links}>
+                    <a href="">Inicio</a>
+                    <a href="">Productos</a>
+                </div>
+                <div className={styles.container__links + " " + styles.container__links_rl}>
+                    <a href="">Iniciar Sesion</a>
+                    <a href="">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default NavBar;
