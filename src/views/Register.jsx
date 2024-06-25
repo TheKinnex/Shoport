@@ -10,7 +10,9 @@ const Register = () => {
         email: '',
         password: '',
         birthDate: '',
-        fav: []
+        fav: [],
+        cart: [],
+        bills: []
     });
 
     const [err, setErr] = useState('');
