@@ -3,12 +3,14 @@ import logo from '../assets/img/logo.png'
 
 const NavBar = () => {
 
-    const styles = {
-        container: 'fixed w-screen top-0 z-30',
-        container__inner: 'px-8 py-4 flex items-center justify-between text-white',
-        container__links: 'flex gap-12',
-        container__links_rl: 'block'
-    }
+    const styles = {
+        container: 'fixed w-screen top-0 z-30',
+        container__inner:  'px-8 py-4 flex items-center justify-between text-white',
+        container__links: 'flex gap-12'
+    }
+        
+        
+    
 
     const location = useLocation();
     const { pathname } = location;

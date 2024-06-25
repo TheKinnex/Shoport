@@ -10,7 +10,7 @@ import NoFound from './views/NoFound'
 import Login from './views/Login'
 import Register from './views/Register'
 import Catalogue from './views/Catalogue'
-
+import ShoppingCart from './views/ShoppingCart'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -18,12 +18,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/Api' element={<Api/>}/>
-        <Route path='/Producto/:assinProduct' element={<IndividualProduct/>}/>
+        <Route path='/Product/:assinProduct' element={<IndividualProduct/>}/>
         <Route path='*' element={<NoFound/>}/>
         <Route path='/Login' element={<Login/>}/>
         <Route path='/Register' element={<Register/>}/>
-        <Route path='/Catalogo/' element={<Catalogue/>}/>
-        <Route path='/Catalogo/:category' element={<Catalogue/>}/>
+        <Route path='/Products/' element={<Catalogue/>}/>
+        <Route path='/Products/:category' element={<Catalogue/>}/>
+        <Route path='/ShoppingCart' element={<ShoppingCart/>}/>
     </Routes>
     <Footer/>
   </BrowserRouter>
