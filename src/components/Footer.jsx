@@ -45,11 +45,11 @@ const Footer = () => {
                     <h3 className='font-medium'>Métodos de Pago</h3>
                     <p className={styles.payment_method}>
                         Paypal
-                        <span><img src="/path/to/paypal-logo.png" alt="Paypal" className="w-6 h-6" /></span>
+                        
                     </p>
                     <p className={styles.payment_method}>
                         Binance
-                        <span><img src="/path/to/binance-logo.png" alt="Binance" className="w-6 h-6" /></span>
+                        
                     </p>
                 </div>
                 <div className={styles.info_container + ' hidden md:block'}>

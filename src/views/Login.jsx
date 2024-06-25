@@ -1,6 +1,6 @@
 import { useState } from "react";
 import botones from '../assets/img/burjaboton.png';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const estilos = {
     letters: 'text-[16px] md:text-[24px] text-black'
@@ -8,7 +8,7 @@ const estilos = {
 
 const Login = () => {
 
-  
+    const navigate = useNavigate();
 
     const [user, setUser] = useState({
         emailOrPhone: '',
@@ -40,6 +40,8 @@ const Login = () => {
         alert('Inicio de sesión exitoso');
         setUser({ emailOrPhone: '', password: '' });
         setErr('');
+
+        navigate("/");
         
     }
 

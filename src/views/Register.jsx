@@ -1,12 +1,14 @@
 import { useState } from "react";
 import boton from '../assets/img/burjaboton.png';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const estilos = {
     letters: 'text-[16px] md:text-[24px] text-black'
 };
 
 const Register = () => {
+
+    const navigate = useNavigate();
 
     const [user, setUser] = useState({
         name: '',
@@ -76,7 +78,7 @@ const Register = () => {
             birthDate: ''
         });
         setErr('');
-        
+        navigate("/login");
     }
 
     return (

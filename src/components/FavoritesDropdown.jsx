@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 
-const FavoritesDropdown = () => {
+const FavoritesDropdown = (isProductPage) => {
     const [favorites, setFavorites] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -26,7 +26,7 @@ const FavoritesDropdown = () => {
 
     return (
         <div className="relative">
-            <button onClick={toggleDropdown} className="font-bold text-white md:text-black">
+            <button onClick={toggleDropdown} className={`${isProductPage ? 'text-black' : 'text-white'}`}>
                 Favoritos
             </button>
             {isOpen && (

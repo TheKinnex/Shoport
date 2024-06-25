@@ -15,8 +15,8 @@ const NavBar = () => {
     const navigate = useNavigate();
     const { pathname } = location;
 
-    const isAuthPage = pathname.includes('login') || pathname.includes('register');
-    const isProductPage = pathname.includes('producto') || pathname.includes('catalogo');
+    const isAuthPage = pathname.toLowerCase().includes('login') || pathname.toLowerCase().includes('register');
+    const isProductPage = pathname.toLowerCase().includes('product') || pathname.toLowerCase().includes('products') || pathname.toLowerCase().includes('shoppingcart');
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
     const handleLogout = () => {
@@ -44,15 +44,15 @@ const NavBar = () => {
                     <div className="flex gap-4 items-center">
                         {currentUser ? (
                             <>
-                                <FavoritesDropdown />
+                                <FavoritesDropdown isProductPage={isProductPage} />
                                 <NavLink to="/ShoppingCart" className={({ isActive }) => isActive ? 'font-bold' : ''}>
                                     Carrito
                                 </NavLink>
                                 <button 
                                     onClick={handleLogout} 
-                                    className="font-bold text-white md:text-black"
+                                    className="font-bold text-white"
                                 >
-                                    Cerrar Sesión
+                                    <span className={`${isProductPage ? 'text-black' : 'text-white'}`}>Cerrar Sesión</span>
                                 </button>
                             </>
                         ) : (
