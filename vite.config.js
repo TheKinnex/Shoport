@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
+  base: './', // Cambia esto según el nombre de tu repositorio.
   plugins: [react()],
-  base: 'https://victoriusd.github.io/',
-})
+});
+

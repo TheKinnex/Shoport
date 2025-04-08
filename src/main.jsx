@@ -1,5 +1,3 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './views/Home'
 import NavBar from './components/NavBar'
@@ -10,8 +8,9 @@ import Login from './views/Login'
 import Register from './views/Register'
 import Catalogue from './views/Catalogue'
 import ShoppingCart from './views/ShoppingCart'
+import { createRoot } from 'react-dom/client'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')).render(
         <BrowserRouter>
                 <NavBar />
                 <Routes>
