@@ -16,7 +16,7 @@ const Catalogue = () => {
 
     useEffect(() => {
         axios
-            .get("https://quixotic-elf-391004-default-rtdb.firebaseio.com/products.json")
+            .get("https://shoport-9381f-default-rtdb.firebaseio.com/products.json")
             .then((res) => {
                 const productsList = Object.values(res.data);
                 setData(productsList);

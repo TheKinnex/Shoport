@@ -15,7 +15,7 @@ const Api = () => {
 
     //Obtenemos la api
     useEffect(() => {
-        axios.get('https://quixotic-elf-391004-default-rtdb.firebaseio.com/products.json')
+        axios.get('https://shoport-9381f-default-rtdb.firebaseio.com/products.json')
             .then(res => {
                 
                 // Guardamos los productos en state Data
